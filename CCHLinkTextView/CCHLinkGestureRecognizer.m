@@ -111,14 +111,8 @@
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [super touchesEnded:touches withEvent:event];
-
-    if ([self touchIsCloseToInitialPoint:touches.anyObject]) {
-        self.result = CCHLinkGestureRecognizerResultTap;
-        self.state = UIGestureRecognizerStateRecognized;
-    } else {
-        self.result = CCHLinkGestureRecognizerResultFailed;
-        self.state = UIGestureRecognizerStateRecognized;
-    }
+    self.result = CCHLinkGestureRecognizerResultTap;
+    self.state = UIGestureRecognizerStateRecognized;
 }
 
 - (BOOL)touchIsCloseToInitialPoint:(UITouch *)touch
